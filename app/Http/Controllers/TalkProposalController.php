@@ -48,7 +48,7 @@ class TalkProposalController extends Controller
         ]);
 
 
-        return redirect()->route('talkproposal.index');
+        return redirect()->route('talkproposal.index')->with('success','Add successfully');
 
 
     }
