@@ -16,8 +16,9 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('talk_proposal_id')->constrained('talk_proposals')->onDelete('cascade');
             $table->json('changes');
-            $table->timestamp('timestamp')->useCurrent();
-        });
+            $table->timestamp('revision_timestamp')->useCurrent(); // The correct usage of the timestamp() method
+            $table->timestamps(); // Adds 'created_at' and 'updated_at' columns
+         });
     }
 
     /**

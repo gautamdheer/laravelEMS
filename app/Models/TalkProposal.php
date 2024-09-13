@@ -14,6 +14,10 @@ class TalkProposal extends Model
 
     protected $fillable = ['speaker_id', 'title', 'description', 'tags', 'file_path'];
 
+    protected $casts = [
+        'tags'=>'array'
+    ];
+
     public function speaker()
     {
         return $this->belongsTo(Speaker::class);

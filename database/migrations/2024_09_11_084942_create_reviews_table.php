@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('talk_proposal_id')->constrained('talk_proposals')->onDelete('cascade');
             $table->text('comments');
             $table->unsignedInteger('rating');
-            $table->timestamps(); 
+            $table->timestamps();
         });
     }
 

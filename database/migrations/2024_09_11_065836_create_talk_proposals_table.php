@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('talk_proposals', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('speaker_id')->constrained('speakers')->onDelete('cascade');
+            $table->foreignId('speaker_id')->onDelete('cascade');
             $table->string('title');
             $table->text('description');
             $table->json('tags');
-            $table->string('file_path');
+            $table->string('file_path')->nullable();
             $table->enum('status', ['Pending', 'Reviewed', 'Approved', 'Rejected'])->default('Pending');
             $table->timestamps();
         });

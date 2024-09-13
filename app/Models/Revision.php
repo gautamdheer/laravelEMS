@@ -11,7 +11,7 @@ class Revision extends Model
 {
     use HasFactory;
     protected $fillable = ['user_id', 'talk_proposal_id', 'changes', 'timestamp'];
-
+    public $timestamps = false;
 
     public function user()
     {
